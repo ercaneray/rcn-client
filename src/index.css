@@ -459,7 +459,6 @@ p {
   margin-bottom: 0;
 }
 
-/* login sayfası özel stilleri */
 .login-page {
   margin-top: 10%;
   display: flex;
@@ -467,6 +466,9 @@ p {
   justify-content: center;
   height: 'auto';
   background-color: #f1f1f1;
+  width: 29%;
+  border-radius: 8px;
+  margin-left:35%;
 }
 
 .login-form {
@@ -488,7 +490,6 @@ p {
   text-align: center;
 }
 
-/* Adjustments for better form input styling */
 .login-form input[type="text"],
 .login-form input[type="email"],
 .login-form input[type="password"],
