@@ -1,0 +1,1297 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
+/* layout */
+:root {
+  --primary: #0a2b4e;
+  --error: #e7195a;
+  --confirm-yes-bg: #1aac83;
+  --confirm-yes-border: #1aac83;
+  --confirm-no-bg: #ff5c5c;
+  --confirm-no-border: #ff5c5c;
+}
+
+body {
+  background: #f1f1f1;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-image: url('/public/background.jpg');
+}
+
+header {
+  background: var(--primary);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+}
+
+header .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+header a:hover {
+  color: var(--secondary-color);
+}
+
+.pages {
+  max-width: 1400px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  transition: color 0.3s;
+}
+
+/* Page Styles */
+.page {
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  text-align: center;
+}
+
+.page-title {
+  font-size: 2.5em;
+  /* Başlık boyutu arttırıldı */
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+.vehicles-page,
+.warehouses-page,
+.workers-page {
+  padding: 0 0px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+/* Form Styles */
+form {
+  max-width: 500px;
+  /* Form genişliği arttırıldı */
+  margin: 0 auto 40px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* Gölgelendirme eklendi */
+  text-align: left;
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #333;
+}
+
+input[type="text"],
+select,
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+select:focus,
+input[type="number"]:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+input[type="submit"],
+.form-actions .p-button {
+  width: 100%;
+  padding: 12px;
+  /* Düğme yüksekliği arttırıldı */
+  border: none;
+  border-radius: 5px;
+  background-color: var(--primary);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover,
+.form-actions .p-button:hover {
+  background-color: #003056;
+}
+
+p {
+  color: var(--error);
+  font-size: 0.875em;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.p-button {
+  border-radius: 8px !important;
+  /* Köşeleri daha yuvarlak */
+  width: 2.5em;
+  height: 2.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, transform 0.3s;
+  /* Geçiş efektleri */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Hafif gölge efekti */
+}
+
+.p-button-success {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
+.p-button-success:hover {
+  background-color: #003056 !important;
+  border-color: #003056 !important;
+}
+
+.p-button-danger {
+  background-color: var(--error) !important;
+  border-color: var(--error) !important;
+}
+
+.p-button-danger:hover {
+  background-color: #d41445 !important;
+  border-color: #d41445 !important;
+  transform: scale(1.1);
+}
+.p-button-info {
+  background-color: #17a2b8 !important;
+  border-color: #17a2b8 !important;
+}
+.p-button-info:hover {
+  background-color: #138496 !important;
+  border-color: #138496 !important;
+  transform: scale(1.1);
+}
+
+/* Custom Action Buttons */
+.custom-action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.custom-action-button-success {
+  border-radius: 8px !important;
+  /* Köşeleri daha yuvarlak */
+  width: 2.5em;
+  height: 2.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, transform 0.3s;
+  /* Geçiş efektleri */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Hafif gölge efekti */
+  padding: 0 !important;
+  /* Buton içindeki padding'i kaldır */
+}
+
+.custom-action-button-danger {
+  border-radius: 8px !important;
+  /* Köşeleri daha yuvarlak */
+  width: 2.5em;
+  height: 2.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, transform 0.3s;
+  /* Geçiş efektleri */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Hafif gölge efekti */
+  padding: 0 !important;
+  /* Buton içindeki padding'i kaldır */
+}
+
+.custom-action-button-success .pi,
+.custom-action-button-danger .pi {
+  margin: 0 !important;
+  /* İkonun margin'ini kaldır */
+  font-size: 1.2em;
+  /* İkon boyutunu ayarla */
+}
+
+.custom-action-button-success {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
+.custom-action-button-success:hover {
+  background-color: #003056 !important;
+  border-color: #003056 !important;
+  transform: scale(1.1);
+}
+
+.custom-action-button-danger {
+  background-color: var(--error) !important;
+  border-color: var(--error) !important;
+}
+
+.custom-action-button-danger:hover {
+  background-color: #d41445 !important;
+  border-color: #d41445 !important;
+  transform: scale(1.1);
+  /* Hover'da büyüme efekti */
+}
+
+/* ConfirmDialog Custom Styles */
+.p-confirm-dialog .p-dialog-footer {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 1em !important;
+}
+
+.p-confirm-dialog .p-button {
+  min-width: 100px !important;
+  border-radius: 5px !important;
+}
+
+.p-confirm-dialog .p-button.p-confirm-dialog-yes {
+  background-color: var(--confirm-yes-bg) !important;
+  border-color: var(--confirm-yes-border) !important;
+}
+
+.p-confirm-dialog .p-button.p-confirm-dialog-no {
+  background-color: var(--confirm-no-bg) !important;
+  border-color: var(--confirm-no-border) !important;
+}
+
+/* Table header styles */
+.p-datatable-thead>tr>th {
+  background-color: var(--primary) !important;
+  color: white !important;
+  font-weight: bold;
+  text-align: center;
+}
+
+.p-datatable {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Alternating row colors for readability */
+.p-datatable .p-datatable-tbody>tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.p-datatable .p-datatable-tbody>tr:nth-child(odd) {
+  background-color: white;
+}
+
+/* Table cell styles */
+.p-datatable .p-datatable-tbody>tr>td {
+  padding: 10px 15px;
+  text-align: left;
+}
+
+/* New padding/margin for table columns */
+.p-datatable .p-datatable-tbody>tr>td:nth-child(2) {
+  padding-right: 100px;
+}
+
+/* Specific column styles for better alignment */
+.p-datatable-tbody>tr>td:nth-child(3),
+.p-datatable-tbody>tr>td:nth-child(4),
+.p-datatable-tbody>tr>td:nth-child(5),
+.p-datatable-tbody>tr>td:nth-child(6),
+.p-datatable-tbody>tr>td:nth-child(7) {
+  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* Center align city column header */
+.p-datatable-thead>tr>th:nth-child(2) {
+  text-align: left !important;
+}
+
+/* Specific column styles for vehicles table for better alignment */
+.p-datatable .p-datatable-tbody>tr>td:nth-child(1) {
+  padding-right: 100px;
+}
+
+/* Specific column styles for vehicles table for better alignment */
+.p-datatable-vehicles .p-datatable-tbody>tr>td:nth-child(2),
+.p-datatable-vehicles .p-datatable-tbody>tr>td:nth-child(3),
+.p-datatable-vehicles .p-datatable-tbody>tr>td:nth-child(4),
+.p-datatable-vehicles .p-datatable-tbody>tr>td:nth-child(5),
+.p-datatable-vehicles .p-datatable-tbody>tr>td:nth-child(6) {
+  text-align: center;
+}
+
+.p-datatable-wrapper {
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/* Custom Dialog Styles */
+.p-dialog {
+  width: 70vw !important;
+  max-width: 70vw !important;
+  box-shadow: none !important;
+  border-radius: 8px !important;
+}
+
+.p-dialog .form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px
+}
+
+/* Existing styles */
+
+/* Signup Page Styles */
+.signup-page {
+  margin-top: 6%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 'auto';
+  background-color: #f1f1f1;
+}
+
+.signup-form {
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.signup-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+/* Adjustments for better form input styling */
+.signup-form input[type="text"],
+.signup-form input[type="email"],
+.signup-form input[type="password"],
+.signup-form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.signup-form input[type="text"]:focus,
+.signup-form input[type="email"]:focus,
+.signup-form input[type="password"]:focus,
+.signup-form select:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+.signup-form button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--primary);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.signup-form button[type="submit"]:hover {
+  background-color: #158f6b;
+}
+
+.signup-form p {
+  color: var(--error);
+  font-size: 0.875em;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+/* login sayfası özel stilleri */
+.login-page {
+  margin-top: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 'auto';
+  background-color: #f1f1f1;
+}
+
+.login-form {
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.login-title {
+  font-size: 2em;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+/* Adjustments for better form input styling */
+.login-form input[type="text"],
+.login-form input[type="email"],
+.login-form input[type="password"],
+.login-form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.login-form input[type="text"]:focus,
+.login-form input[type="email"]:focus,
+.login-form input[type="password"]:focus,
+.login-form select:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+.login-form button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--primary);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.login-form button[type="submit"]:hover {
+  background-color: #003056;
+}
+
+.login-form p {
+  color: var(--error);
+  font-size: 0.875em;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+
+/* Kullanıcı Paneli ve Açılır Menü için Özel Stiller */
+.user-panel {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+
+.user-panel .user-button {
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  background-color: var(--primary);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, width 0.3s;
+  width: auto;
+  max-width: 200px;
+  /* Butonun genişliği kullanıcının ismine göre ayarlanabilir */
+  white-space: nowrap;
+  /* Uzun isimler için tek satırda kalmasını sağlar */
+  overflow: hidden;
+  /* Uzun isimler taşarsa gizlenir */
+  text-overflow: ellipsis;
+  /* Uzun isimlerin sonuna "..." ekler */
+}
+
+.user-panel .user-button:hover {
+  background-color: #003056;
+}
+
+.user-panel .p-tieredmenu {
+  background-color: white !important;
+  border: 1px solid #ddd !important;
+}
+
+.user-panel .p-tieredmenu .p-menuitem-link {
+  color: #333 !important;
+}
+
+.user-panel .p-tieredmenu .p-menuitem-link:hover {
+  background-color: #f1f1f1 !important;
+}
+
+.user-panel .p-button-label {
+  padding: 0.5em 1em !important;
+  white-space: nowrap;
+}
+
+.user-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 1000;
+  margin-top: 10px;
+}
+
+.pi {
+  font-size: 1.2em;
+  margin-right: 5px;
+}
+
+.user-button-icon {
+  margin-right: 10px;
+}
+
+.user-name {
+  margin-left: 8px;
+  font-weight: 600;
+  font-size: 1em;
+  white-space: nowrap;
+  /* Textin taşmasını önler */
+}
+
+/* Menubar Custom Styles */
+.menubar .p-menubar {
+  display: flex;
+  justify-content: space-btween;
+  align-items: center;
+  padding: 10px 20px;
+  /* Padding'i artırdık */
+  background-color: #ffffff;
+  /* Navbar arka plan rengi */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  /* Hafif gölge efekti */
+}
+
+.menubar .p-menubar-start {
+  display: flex;
+  align-items: center;
+}
+
+.menubar .p-menubar-end {
+  display: flex;
+  align-items: center;
+}
+
+.menubar .p-menubar .p-menubar-root-list {
+  display: flex;
+  justify-content: flex-end;
+  flex-grow: 1;
+}
+
+.menubar .p-menubar .p-menubar-root-list>li {
+  margin: 0 10px;
+}
+
+.user-panel {
+  display: flex;
+  align-items: center;
+}
+
+.user-button {
+  padding: 0.1rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, color 0.3s;
+}
+
+.logo i {
+  margin-right: 10px;
+  /* İkon ve metin arasındaki boşluğu ayarlar */
+  font-size: 3rem;
+  /* İkonun boyutunu ayarlar */
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  color: #003056;
+}
+
+/* Specific adjustments for action buttons' icons */
+.action-buttons .p-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-buttons .p-button .pi {
+  margin: 0;
+}
+
+/* Center align logo icon vertically */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+/* Medya sorguları */
+@media screen and (max-width: 768px) {
+  .card.menubar .p-menubar-root-list>.p-menuitem {
+    display: block;
+    text-align: center;
+  }
+
+  .card.menubar .p-menubar-root-list>.p-menuitem>.p-menuitem-link {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .card.menubar .p-menubar-root-list>.p-menuitem .p-menuitem-text {
+    display: block;
+    padding: 5px 0;
+  }
+
+  .card.menubar .p-menubar-root-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .user-panel {
+    margin-top: 10px;
+  }
+
+  .user-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+/* Navbar düzenlemeleri */
+.menubar-container {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 10px 20px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-icon {
+  font-size: 2rem;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.user-panel {
+  display: flex;
+  align-items: center;
+}
+
+.user-button {
+  font-size: 1rem;
+  margin-left: 10px;
+}
+
+/* Mobile uyumluluk */
+@media screen and (max-width: 768px) {
+  .menubar-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .user-panel {
+    margin-top: 10px;
+  }
+
+  .user-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Menü öğelerini sağa hizalama */
+.p-menubar .p-menubar-start {
+  margin-right: auto;
+}
+
+.p-menubar .p-menubar-end {
+  margin-left: 0;
+}
+
+.p-menubar .p-menubar-root-list {
+  justify-content: flex-end !important;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  font-size: 16px;
+}
+
+form {
+  font-size: 16px;
+}
+
+.change-history-page {
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.change-history-page h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+.change-history-page .p-datatable .p-datatable-thead>tr>th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.change-history-page .p-datatable .p-datatable-tbody>tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.filters {
+  margin-bottom: 1em;
+  display: flex;
+  gap: 1em;
+}
+
+.filters input {
+  padding: 0.5em;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.insert {
+  color: green;
+  font-weight: bold;
+}
+
+.delete {
+  color: red;
+  font-weight: bold;
+}
+
+.update {
+  color: blue;
+  font-weight: bold;
+}
+
+/* Change History Table Styles */
+.change-history-page .change-history-table .p-datatable .p-datatable-tbody>tr>td {
+  vertical-align: middle;
+}
+
+.change-history-table .p-datatable .p-datatable-thead>tr>th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+}
+
+.change-history-table .p-datatable .p-datatable-tbody>tr>td.description-cell {
+  padding: 1em;
+}
+
+.change-history-table .p-datatable .p-datatable-tbody>tr>td.user-cell {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.change-history-table .p-datatable .p-datatable-tbody>tr>td.date-cell {
+  font-size: 0.9em;
+  color: #6c757d;
+}
+
+.description-insert {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.description-delete {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.description-update {
+  color: #ffc107;
+  font-weight: bold;
+}
+
+/* Change History Table Styles */
+.change-history-page .p-datatable .p-datatable-tbody>tr>td {
+  vertical-align: middle;
+}
+
+.change-history-page .p-datatable .p-datatable-thead>tr>th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+}
+
+.change-history-page .p-datatable .p-datatable-tbody>tr>td.description-cell {
+  padding: 1em;
+}
+
+.change-history-page .p-datatable .p-datatable-tbody>tr>td.user-cell {
+  font-weight: bold;
+  color: #3d3636;
+  font-size: 1.1em;
+  /* Daha büyük yazı boyutu */
+  text-transform: capitalize;
+  /* İlk harfi büyük yapar */
+}
+
+.change-history-page .p-datatable .p-datatable-tbody>tr>td.date-cell {
+  font-size: 0.9em;
+  color: #6c757d;
+}
+
+.change-history-page .p-datatable .p-datatable-tbody>tr>td.user-cell {
+  font-weight: bold;
+  color: #007bff;
+  font-size: 1.1em;
+  /* Daha büyük yazı boyutu */
+  text-transform: capitalize;
+  /* İlk harfi büyük yapar */
+}
+
+/* Centered Heading Style */
+.change-history-page h1 {
+  text-align: center;
+}
+
+/* General styles for the Change History page */
+.change-history-page {
+  padding: 20px;
+}
+
+.change-history-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.change-history-table .p-datatable-thead>tr>th {
+  background-color: #0c8346;
+  color: #ffffff;
+}
+
+.change-history-table .p-datatable-tbody>tr>td {
+  text-align: left;
+}
+
+.stock-change {
+  margin-bottom: 10px;
+}
+
+.change-details {
+  margin: 20px 0;
+}
+
+.change-details-dialog .p-dialog-header {
+  background-color: #0c8346;
+  color: #ffffff;
+}
+
+.change-details-dialog .p-dialog-content {
+  padding: 20px;
+}
+
+/* New styles for better readability */
+.change-details-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.change-details-table th,
+.change-details-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.change-details-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.change-details-table td {
+  font-family: monospace;
+}
+
+.change-details-table .highlight {
+  color: #d9534f;
+  /* or any other color to highlight changes */
+}
+
+/* Dialog başlığını ortalamak ve stil vermek için */
+.p-dialog .p-dialog-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  /* Arka planı beyaz yap */
+}
+
+.p-dialog .p-dialog-title {
+  flex: 1;
+  /* Başlığı ortalamak için esneklik ekle */
+  text-align: center;
+  /* Yazıyı ortala */
+  font-size: 40px;
+  /* Yazı boyutunu büyüt */
+  font-weight: bold;
+  /* Yazıyı kalınlaştır */
+  color: #333;
+  /* Yazı rengini belirle */
+}
+
+.change-history-page .details-button {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.change-history-page .details-button:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+  color: #fff;
+}
+
+.change-history-page .dialog-header {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.change-history-page {
+  padding: 2rem;
+}
+
+.change-history-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.change-history-table {
+  margin-top: 2rem;
+}
+
+.custom-details-button-1 {
+  background-color: #007ad9;
+  color: #ffffff;
+  padding: 0.5rem 2.5rem;
+  font-size: 0.9rem;
+  border-radius: 5px;
+}
+
+.custom-details-button-1:hover {
+  background-color: #005f9e;
+}
+
+.change-details-dialog .p-dialog-header {
+  text-align: center;
+}
+
+.change-details-dialog h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.change-details-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.change-details-table th,
+.change-details-table td {
+  padding: 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid #dddddd;
+}
+
+.change-details-table th {
+  background-color: #f4f4f4;
+}
+
+.change-details-table .highlight {
+  background-color: #ffffcc;
+}
+
+.profile-page {
+  padding: 2rem;
+}
+
+.profile-page h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.profile-page p {
+  font-size: 1.2rem;
+}
+.noncontent {
+  display: flex;
+
+}
+
+.city-permission-container {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+
+.city-permission-form .field {
+  margin-bottom: 1rem;
+}
+
+.city-permission-form .field-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.city-permission-form .field-checkbox label {
+  margin-left: 0.5rem;
+}
+
+.city-permission-form h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.city-permission-table {
+  flex: 2;
+}
+
+.city-permission-table h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.change-details-dialog .p-dialog-header {
+  justify-content: center;
+  font-weight: bold;
+}
+
+.custom-action-buttons .p-button {
+  margin-right: 0.5rem;
+}
+
+.custom-details-button {
+  color: #007ad9;
+}
+
+.p-datatable .p-datatable-tbody>tr>td {
+  text-align: center;
+}
+
+.profile-header {
+  margin-bottom: 2rem;
+}
+
+.profile-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.p-field {
+  margin-bottom: 1rem;
+}
+
+.p-field-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.p-field-checkbox label {
+  margin-left: 0.5rem;
+}
+
+.profile-header h1,
+.profile-header p {
+  color: #333;
+}
+
+.p-button-primary {
+  background-color: #28a745;
+  border: none;
+}
+
+.city-permissions-table .p-datatable-header {
+  background-color: #28a745;
+  color: white;
+}
+
+.city-permission-form h2 {
+  color: #333;
+}
+
+.profile-page {
+  padding: 2rem;
+}
+
+.profile-header {
+  margin-bottom: 2rem;
+}
+
+.city-permissions-table {
+  width: 100%;
+}
+
+.city-permission-form {
+  width: 30%;
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.p-field {
+  margin-bottom: 1rem;
+}
+
+
+.p-field-checkbox label {
+  margin-left: 0.5rem;
+}
+
+.profile-header h1,
+.profile-header p {
+  color: #333;
+}
+
+.p-button-primary {
+  background-color: #28a745;
+  border: none;
+}
+
+.city-permissions-table .p-datatable-header {
+  background-color: #28a745;
+  color: white;
+}
+
+.city-permission-form h2 {
+  color: #333;
+}
+
+.p-field-checkbox {
+  margin-bottom: 10px;
+}
+
+.custom-button {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+}
+
+.custom-button:hover {
+  background-color: #003056;
+  ;
+}
+.iconfield {
+  margin-left: 6%;
+}
+.iconfield-users {
+  margin-bottom: 1%;
+}
