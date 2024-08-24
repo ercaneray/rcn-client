@@ -12,7 +12,7 @@ This project is an inventory management system designed to help businesses keep 
 <img width="1440" alt="image" src="https://github.com/user-attachments/assets/3bef7bdc-ca6f-4404-8477-51235f713ba2">
 
 ## User List
-<img width="1440" alt="image" src="https://github.com/user-attachments/assets/5f08256c-7e4f-42f0-b922-61d8127e0b88">
+<img width="1440" alt="Screenshot 2024-08-25 at 12 50 51 AM" src="https://github.com/user-attachments/assets/c123221e-c51d-47ef-9e94-7bca0256db11">
 
 ## Change History
 <img width="1440" alt="image" src="https://github.com/user-attachments/assets/022c8315-a768-49f0-bb12-e2e4b09b982a">
