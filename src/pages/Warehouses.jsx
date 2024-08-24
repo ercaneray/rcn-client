@@ -19,7 +19,7 @@ function Warehouses() {
     const [selectedWarehouse, setSelectedWarehouse] = useState(null);
     const [editDialogVisible, setEditDialogVisible] = useState(false);
     const [transactionDialogVisible, setTransactionDialogVisible] = useState(false);
-    const [selectedWorkerForTransaction, setSelectedWorkerForTransaction] = useState(null);
+    const [selectedWarehouseForTransaction, setSelectedWarehouseForTransaction] = useState(null);
     const toast = useRef(null);
     const [filterValue, setFilterValue] = useState('');
     const [filters, setFilters] = useState({
@@ -99,12 +99,12 @@ function Warehouses() {
 
     const handleTransactionSave = () => {
         fetchWarehouses();
-        setSelectedWorkerForTransaction(null);
+        setSelectedWarehouseForTransaction(null);
         setTransactionDialogVisible(false);
     };
 
     const handleTransactionCancel = () => {
-        setSelectedWorkerForTransaction(null);
+        setSelectedWarehouseForTransaction(null);
         setTransactionDialogVisible(false);
     };
 
@@ -119,7 +119,7 @@ function Warehouses() {
                     <Button icon="pi pi-pencil" className="p-button-success custom-action-button-success" onClick={() => { setSelectedWarehouse(rowData); setEditDialogVisible(true); }} />
                 )}
                 {(canUpdate || user.role === 'admin') && (
-                    <Button icon="pi pi-arrow-right-arrow-left" className="p-button-info custom-action-button-info" onClick={() => { setSelectedWorkerForTransaction(rowData); setTransactionDialogVisible(true); }} />
+                    <Button icon="pi pi-arrow-right-arrow-left" className="p-button-info custom-action-button-info" onClick={() => { setSelectedWarehouseForTransaction(rowData); setTransactionDialogVisible(true); }} />
                 )}
                 {canDelete && (
                     <Button icon="pi pi-trash" className="p-button-danger custom-action-button-danger" onClick={() => confirmDelete(rowData._id)} />
@@ -154,16 +154,16 @@ function Warehouses() {
                 </DataTable>
                 {selectedWarehouse && (
                     <EditForm
-                        formType="workers"
+                        formType="warehouses"
                         data={selectedWarehouse}
                         onSave={handleSave}
                         onHide={handleCancel}
                         visible={editDialogVisible}
                     />
                 )}
-                {selectedWorkerForTransaction && (
+                {selectedWarehouseForTransaction && (
                     <TransactionForm
-                        selectedData={selectedWorkerForTransaction}
+                        selectedData={selectedWarehouseForTransaction}
                         onSave={handleTransactionSave}
                         onHide={handleTransactionCancel}
                         visible={transactionDialogVisible}

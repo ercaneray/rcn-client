@@ -8,10 +8,9 @@ import { InputIcon } from 'primereact/inputicon';
 import { IconField } from 'primereact/iconfield';
 import { FilterMatchMode } from 'primereact/api';
 import EditForm from '../components/EditForm';
-import TransactionForm from '../components/TransactionForm'; 
+import TransactionForm from '../components/TransactionForm';
 import { Toast } from 'primereact/toast';
 import { useAuthContext } from '../hooks/useAuthContext';
-
 import '../index.css';
 
 function Vehicles() {
@@ -20,7 +19,7 @@ function Vehicles() {
     const [selectedVehicle, setSelectedVehicle] = useState(null);
     const [editDialogVisible, setEditDialogVisible] = useState(false);
     const [transactionDialogVisible, setTransactionDialogVisible] = useState(false);
-    const [selectedWorkerForTransaction, setSelectedWorkerForTransaction] = useState(null);
+    const [selectedVehicleForTransaction, setSelectedVehicleForTransaction] = useState(null);
     const toast = useRef(null);
     const [filterValue, setFilterValue] = useState('');
     const [filters, setFilters] = useState({
@@ -38,20 +37,17 @@ function Vehicles() {
     };
 
     const fetchVehicles = async () => {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/api/vehicles`, {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${user.token}`
-                }
-            });
-    
-            const vehicles = await response.json();
-            if (response.ok) {
-                setData(vehicles.vehicles);
+        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/vehicles`, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${user.token}`
             }
-            console.log(vehicles);
-        };
-    
+        });
+        const vehicles = await response.json();
+        if (response.ok) {
+            setData(vehicles.vehicles);
+        }
+    };
 
     useEffect(() => {
         if (user) {
@@ -102,12 +98,12 @@ function Vehicles() {
     };
     const handleTransactionSave = () => {
         fetchVehicles();
-        setSelectedWorkerForTransaction(null);
+        setSelectedVehicleForTransaction(null);
         setTransactionDialogVisible(false);
     };
 
     const handleTransactionCancel = () => {
-        setSelectedWorkerForTransaction(null);
+        setSelectedVehicleForTransaction(null);
         setTransactionDialogVisible(false);
     };
 
@@ -115,7 +111,7 @@ function Vehicles() {
         return (
             <div className="custom-action-buttons">
                 <Button icon="pi pi-pencil" className="p-button-success custom-action-button-success" onClick={() => { setSelectedVehicle(rowData); setEditDialogVisible(true); }} />
-                <Button icon="pi pi-arrow-right-arrow-left" className="p-button-info custom-action-button-info" onClick={() => { setSelectedWorkerForTransaction(rowData); setTransactionDialogVisible(true); }} />
+                <Button icon="pi pi-arrow-right-arrow-left" className="p-button-info custom-action-button-info" onClick={() => { setSelectedVehicleForTransaction(rowData); setTransactionDialogVisible(true); }} />
                 <Button icon="pi pi-trash" className="p-button-success custom-action-button-danger" onClick={() => confirmDelete(rowData._id)} />
             </div>
         );
@@ -126,13 +122,13 @@ function Vehicles() {
             <div className="iconfield">
                 <IconField iconPosition="left">
                     <InputIcon className="pi pi-search" />
-                    <InputText placeholder="Name" value={filterValue} onChange={onFilterChange}/>
+                    <InputText placeholder="Name" value={filterValue} onChange={onFilterChange} />
                 </IconField>
             </div>
             <div className="vehicles-page">
                 <Toast ref={toast} />
                 <ConfirmDialog />
-                
+
                 <DataTable value={data} stripedRows tableStyle={{ minWidth: '50rem' }} showGridlines filters={filters} globalFilterFields={['name']}>
                     <Column field="name" header="Name" ></Column>
                     <Column field="city" header="City"></Column>
@@ -147,16 +143,16 @@ function Vehicles() {
                 </DataTable>
                 {selectedVehicle && (
                     <EditForm
-                        formType="workers"
+                        formType="vehicles"
                         data={selectedVehicle}
                         onSave={handleSave}
                         onHide={handleCancel}
                         visible={editDialogVisible}
                     />
                 )}
-                {selectedWorkerForTransaction && (
+                {selectedVehicleForTransaction && (
                     <TransactionForm
-                        selectedData={selectedWorkerForTransaction}
+                        selectedData={selectedVehicleForTransaction}
                         onSave={handleTransactionSave}
                         onHide={handleTransactionCancel}
                         visible={transactionDialogVisible}

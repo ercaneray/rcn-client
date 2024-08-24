@@ -46,9 +46,7 @@ export default function EditForm({ formType, data, onSave, onHide, visible }) {
       return
     }
     try {
-      console.log('data:', data);
-      console.log('id data:', data._id);
-      console.log(formType);
+
       const response = await fetch(`${process.env.REACT_APP_API_URL}/api/${formType}/${data._id}`, {
         method: 'PATCH',
         headers: {

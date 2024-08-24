@@ -133,13 +133,13 @@ function Workers() {
             <div className="iconfield">
                 <IconField iconPosition="left">
                     <InputIcon className="pi pi-search" />
-                    <InputText placeholder="Name" value={filterValue} onChange={onFilterChange}/>
+                    <InputText placeholder="Name" value={filterValue} onChange={onFilterChange} />
                 </IconField>
             </div>
             <div className="workers-page">
                 <Toast ref={toast} />
                 <ConfirmDialog />
-                
+
                 <DataTable value={data} stripedRows tableStyle={{ minWidth: '50rem' }} showGridlines filters={filters} globalFilterFields={['name']}>
                     <Column field="name" header="Name" ></Column>
                     <Column field="city" header="City"></Column>
